@@ -12,18 +12,19 @@
                     <span class="title">Dashboard</span>
                 </a>
             </li>
-            
+            @if(!Auth::user()->isAdmin())
             <li class="{{ $request->segment(1) == 'tests' ? 'active' : '' }}">
                 <a href="{{ route('tests.index') }}">
                     <i class="fa fa-gears"></i>
                     <span class="title">@lang('quickadmin.test.new')</span>
                 </a>
             </li>
+            @endif
 
             <li class="{{ $request->segment(1) == 'results' ? 'active' : '' }}">
                 <a href="{{ route('results.index') }}">
                     <i class="fa fa-gears"></i>
-                    <span class="title">@lang('quickadmin.results.title')</span>
+                    <span class="title">Results</span>
                 </a>
             </li>
 
@@ -53,7 +54,7 @@
                     <span class="title">@lang('quickadmin.questions-options.title')</span>
                 </a>
             </li>
-            <li>
+            <!-- <li>
                 <a href="#">
                     <i class="fa fa-users"></i>
                     <span class="title">@lang('quickadmin.user-management.title')</span>
@@ -85,7 +86,7 @@
                         </a>
                     </li>
                 </ul>
-            </li>
+            </li> -->
             @endif
             <li>
                 <a href="#logout" onclick="$('#logout').submit();">

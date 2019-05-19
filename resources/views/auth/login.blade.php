@@ -8,7 +8,7 @@
             <br />
             <div class="panel panel-default">
                 <div class="panel-heading">Login</div>
-                <div class="panel-body">
+                <div class="panel-body" style="background-color: cyan">
                     @if (count($errors) > 0)
                         <div class="alert alert-danger">
                             <strong>Whoops!</strong> There were problems with input:
