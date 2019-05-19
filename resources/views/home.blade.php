@@ -27,7 +27,9 @@
                     </div>
                 </div>
             </div>
+            @if(!Auth::user()->isAdmin())
             <a href="{{ route('tests.index') }}" class="btn btn-success">Take a new quiz!</a>
+            @endif
         </div>
     </div>
 @endsection
