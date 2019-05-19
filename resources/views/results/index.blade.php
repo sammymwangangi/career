@@ -54,6 +54,7 @@
                 @endif
             </tbody>
         </table>
+        <a class="btn btn-info" href="{{url('/print-results')}}">Print</a>
     </div>
 </div>
 @stop
