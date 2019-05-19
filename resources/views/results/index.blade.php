@@ -16,7 +16,7 @@
                     <th>@lang('quickadmin.results.fields.user')</th>
                 @endif
                     <th>@lang('quickadmin.results.fields.date')</th>
-                    <th>Result</th>
+                    <!-- <th>Result</th> -->
                     <th>IQ</th>
                     <th>Personality Type</th>
                     <th>&nbsp;</th>
@@ -31,7 +31,7 @@
                             <td>{{ $result->user->name or '' }} ({{ $result->user->email or '' }})</td>
                         @endif
                             <td>{{ $result->created_at or '' }}</td>
-                            <td>{{ $result->result }}/ {{ (count($questions)) }}</td>
+                            <!-- <td>{{ $result->result }}/ {{ (count($questions)) }}</td> -->
                             <td>{{ (($result->result) * 200) / (count($questions)) }}</td>
                             @if ( ($result->result) >= 7)
                             <td>Choleric</td>
@@ -54,7 +54,9 @@
                 @endif
             </tbody>
         </table>
+        @if(Auth::user()->isAdmin())
         <a class="btn btn-info" href="{{url('/print-results')}}">Print</a>
+        @endif
     </div>
 </div>
 @stop
